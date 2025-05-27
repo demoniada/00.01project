@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | 00.01 project</title>
+  <link rel="icon" href="logo1.png" type="image/png" />
+  <!-- Updated font: Montserrat Alternates -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    main {
+      color: #33312F;
+    }
+    .project-gallery,
+    .designer-portraits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .project-item,
+    .designer {
+      flex: 1 1 calc(50% - 20px);
+    }
+    .project-item img,
+    .designer img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="00.01 project" /></a>
+    </div>
+    <div class="hamburger">&#9776;</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">projects</a>
+          <ul class="dropdown-content">
+            <li><a href="residential_buildings.html">residential buildings</a></li>
+            <li><a href="reconstruction.html">reconstruction</a></li>
+            <li><a href="public_buildings.html">public buildings</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    <h1>About 00.01 project</h1>
+    <p>
+      00.01 project is an architectural bureau that redefines the built environment through innovative design and precise execution.
+      We believe that every structure should inspire and endure, transforming everyday spaces into iconic landmarks.
+    </p>
+    <p>
+      Our team of visionary architects, urban planners, and designers works collaboratively to merge art with science.
+      Using sustainable development strategies and modern technologies, we create designs that are not only aesthetically striking
+      but also environmentally responsible.
+    </p>
+    <p>
+      Every project begins with an in-depth analysis of the client's needs and the contextual uniqueness of the site.
+      This approach allows us to craft tailor-made solutions that blend seamlessly with their surroundings while pushing the boundaries of conventional design.
+    </p>
+    <p>
+      At 00.01 project, tradition and modernity coexist in our design process. We continuously refine our methods,
+      drawing from both timeless architectural principles and emerging trends to deliver designs that speak to the future.
+    </p>
+    <p>
+      We invite you to explore our portfolio and experience how our creations transform spaces, foster community, and elevate urban living.
+      Let us help you shape a sustainable and inspiring environment—one that reflects both your vision and our commitment to excellence.
+    </p>
+    <div class="project-gallery">
+      <div class="project-item">
+        <img src="project1.jpg" alt="Project 1" />
+      </div>
+      <div class="project-item">
+        <img src="project2.jpg" alt="Project 2" />
+      </div>
+    </div>
+    <div class="designer-portraits">
+      <div class="designer">
+        <img src="designer-male.png" alt="lead architect" />
+        <p>lead architect</p>
+      </div>
+      <div class="designer">
+        <img src="designer-female.png" alt="creative director" />
+        <p>creative director</p>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var dropdownToggle = document.querySelector(".dropdown-toggle");
+      var dropdown = dropdownToggle.parentElement;
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+      });
+      document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+        }
+      });
+      var hamburger = document.querySelector(".hamburger");
+      if (hamburger) {
+        hamburger.addEventListener("click", function () {
+          document.querySelector(".menu").classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
