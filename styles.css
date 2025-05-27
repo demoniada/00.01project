@@ -1,0 +1,206 @@
+/* === Global styles === */
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #33312F;
+  background-color: #F0E4D5;
+}
+
+body.home {
+  background-color: #F0E4D5;
+}
+
+body:not(.home) {
+  background-color: #F0E4D5;
+  background-attachment: fixed;
+}
+
+/* === Sidebar === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 10vw;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Vertical line removed */
+
+/* === Logo === */
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.logo img {
+  height: 25px;
+}
+
+/* === Menu and submenu === */
+.menu {
+  position: relative;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  margin-bottom: 20px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #33312F;
+  font-weight: 400;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+.menu li a:hover {
+  color: #000;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(240,228,213,0); /* transparent */
+  list-style: none;
+  padding: 10px;
+  z-index: 100;
+  right: 100%;
+  top: 0;
+  width: 180px;
+}
+.dropdown-content li {
+  padding: 5px 10px;
+}
+.dropdown-content li a {
+  text-decoration: none;
+  color: #33312F;
+  transition: color 0.3s;
+}
+.dropdown-content li a:hover {
+  color: #000;
+}
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* === Vertical centering of menu for desktop (shifted 50% right) === */
+@media (min-width: 769px) {
+  .sidebar nav.menu {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(50%, -50%);
+    text-align: left;
+  }
+}
+
+/* === Mobile styles === */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #33312F;
+    margin: 10px;
+  }
+  .menu {
+    display: none;
+  }
+  .menu.active {
+    display: block;
+    width: 100%;
+    background-color: #F0E4D5;
+    padding: 10px 0;
+  }
+  .menu ul {
+    display: block;
+  }
+  .menu li {
+    margin-bottom: 10px;
+  }
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* === Main content === */
+main {
+  margin-left: calc(10vw + 250px + 20px);
+  padding: 40px;
+}
+
+/* === Modal window and carousel === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1010;
+}
+.carousel-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  color: #fff;
+  font-size: 48px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1010;
+  opacity: 0;
+}
+.carousel-nav.left {
+  left: 0;
+}
+.carousel-nav.right {
+  right: 0;
+}
